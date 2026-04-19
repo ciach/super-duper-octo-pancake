@@ -1,0 +1,20 @@
+[project]
+name = "openai-harness"
+version = "0.1.0"
+description = "A CI-friendly harness for OpenAI SDK prompt, tool, and structured-output regression checks."
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+  "openai>=1.109.1",
+]
+
+[project.scripts]
+openai-harness = "harness.cli:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/harness"]
+
